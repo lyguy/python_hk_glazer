@@ -130,14 +130,6 @@ def melt_mod_dict_to_dat(config):
     
     return outstring
 
-def test_1():
-    jsontodat("test/json_test_in.json", output="test/foo.txt", silent=True)
-    with open("test/foo.txt") as file:
-        gen_str = file.read()
-    with open("test/json_test_out.txt",) as file:
-        test_str = file.read()
-
-    assert(test_str == gen_str)
     
     
    
