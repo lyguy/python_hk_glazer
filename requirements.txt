@@ -1,2 +1,0 @@
-meltmod_jsontodegree
-argparse>=1.2.1
