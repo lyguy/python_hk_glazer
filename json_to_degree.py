@@ -43,7 +43,7 @@ def query_yes_no(question, default="yes"):
                              "(or 'y' or 'n').\n")
 
 
-def jsontodat(input, output=None, silent=False):
+def json_to_dat(input, output=None, silent=False):
     """Takes in a valid json input and prints, either to the screen
     or to stdout, a valid input.dat file
     Args:   input : the filename of our .json input
@@ -62,7 +62,7 @@ def jsontodat(input, output=None, silent=False):
 
 # Outputs config file (input.dat) to std out or to a file
     if output == None:
-        print melt_mod_dict_to_dat(config)
+        print dict_to_dat(config)
     else:
         if not silent:
             # check to see if the file exists
@@ -77,12 +77,12 @@ def jsontodat(input, output=None, silent=False):
                 pass
 
         with open(output, 'w') as out_file:
-            out_file.write(melt_mod_dict_to_dat(config))
+            out_file.write(dict_to_dat(config))
 
     return
 
 
-def melt_mod_dict_to_dat(config):
+def dict_to_dat(config):
     '''Super ugly conversion method,
     Args: config - a dictionary containing all of the appropriate elements
     Returns: outstring, a valid input.dat for the Hock melt model
@@ -150,7 +150,7 @@ def main():
             help='silently overwrite <output>, if it exists')
 
     args = parser.parse_args()
-    jsontodat(args.input, args.output, args.silent)
+    json_to_dat(args.input, args.output, args.silent)
 
 
 if __name__ == '__main__':
