@@ -53,11 +53,11 @@ def json_to_dat(in_file, output=None, silent=False):
     import json
 
     # Open json config file and load the contents to a dictionary
-    with open(input) as in_file:
+    with open(in_file) as conf_file:
         try:
-            config = json.load(in_file)
+            config = json.load(conf_file)
         except ValueError as e:
-            print "Json error, " + str(e) + " in {0}".format(in_file.name)
+            print "Json error, " + str(e) + " in {0}".format(conf_file.name)
             return
 
 # Outputs config file (input.dat) to std out or to a file
