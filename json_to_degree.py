@@ -7,7 +7,7 @@
 class Error(Exception):
     pass
 
-import sys
+import sys as _sys
 
 
 def query_yes_no(question, default="yes"):
@@ -32,18 +32,18 @@ def query_yes_no(question, default="yes"):
         raise ValueError("invalid default answer: '%s'" % default)
 
     while True:
-        sys.stdout.write(question + prompt)
+        _sys.stdout.write(question + prompt)
         choice = raw_input().lower()
         if default is not None and choice == '':
             return valid[default]
         elif choice in valid:
             return valid[choice]
         else:
-            sys.stdout.write("Please respond with 'yes' or 'no' "\
+            _sys.stdout.write("Please respond with 'yes' or 'no' "\
                              "(or 'y' or 'n').\n")
 
 
-def json_to_dat(input, output=None, silent=False):
+def json_to_dat(in_file, output=None, silent=False):
     """Takes in a valid json input and prints, either to the screen
     or to stdout, a valid input.dat file
     Args:   input : the filename of our .json input
