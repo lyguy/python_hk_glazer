@@ -8,6 +8,7 @@ setup(
     author='Lyman Gillispie',
     author_email='lyman.gillispie@gmail.com',
     packages=find_packages(),
+    scripts=['bin/js2degree.py'],
     license='MIT',
     long_description=open('README.md').read(),
 )

@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # Copyright 2012 and 2013 Lyman Gillispie
 # This code is distributed under the MIT License
 # Author: Lyman Gillispie
@@ -130,28 +129,3 @@ def dict_to_dat(config):
 
     outstring = "".join(outstring)
     return outstring
-
-
-def main():
-    import argparse
-
-# Parse commandline options
-    parser = argparse.ArgumentParser(description='Convert json formatted ' +
-            'config files to valid input.dat config files ' +
-            'for the Hock melt model.')
-
-    parser.add_argument('input', type=str,
-            help='json equivalent of input.dat')
-    parser.add_argument('-o', '--output', type=str,
-            help='output filename, if unspecified output is sent to stdout')
-
-    parser.add_argument('-s', '--silent', action="store_true",
-            default=False,
-            help='silently overwrite <output>, if it exists')
-
-    args = parser.parse_args()
-    json_to_dat(args.input, args.output, args.silent)
-
-
-if __name__ == '__main__':
-    main()
