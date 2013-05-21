@@ -11,6 +11,7 @@ setup(
     scripts=['bin/js2degree.py'],
     license='MIT',
     long_description=open('README.md').read(),
+    requires = ['argparse'],
     test_suite='nose.collector',
     tests_require=['nose'],
     include_package_data = True
