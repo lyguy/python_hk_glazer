@@ -2,13 +2,13 @@ from setuptools import setup, find_packages
 
 setup(
     name='json_to_degree',
-    version='0.0.2',
+    version='0.0.3',
     description='Covert compatible JSON configs to DeBAM/DeTIM config.dat files',
     url='https://github.com/fmuzf/meltmod_jsontodegree',
     author='Lyman Gillispie',
     author_email='lyman.gillispie@gmail.com',
     packages=find_packages(),
-    scripts=['bin/js2degree.py'],
+    scripts=['bin/js2degree'],
     license='MIT',
     long_description=open('README.md').read(),
     install_requires = ['argparse'],

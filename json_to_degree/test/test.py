@@ -28,7 +28,7 @@ class TestClass:
 
   def test_2(self):
       '''Test 2: Check command line execution'''
-      cmd = os.path.abspath(self.here + '/../../bin/js2degree.py')
+      cmd = os.path.abspath(self.here + '/../../bin/js2degree')
       print(cmd)
       subprocess.call([cmd, self.data + "/json_test_in.json", "-o=test2.txt", "-s"])
       with open("test2.txt") as file:
