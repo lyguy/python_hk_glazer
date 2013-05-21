@@ -1,29 +1,41 @@
+from nose.tools import with_setup
 import os
+import json_to_degree as jtodeg
+import subprocess
 
 
-def test_1():
-    '''Test 1: Check that json_to_degree works when imported'''
-    import json_to_degree as jtodeg
-    jtodeg.json_to_dat("test/json_test_in.json", output="foo.txt", silent=True)
-    with open("foo.txt") as file:
-        gen_str = file.read()
-    os.remove("foo.txt")
+class TestClass:
 
-    with open("test/json_test_out.txt") as file:
-        test_str = file.read()
+  @classmethod
+  def setup_class(cls):
+    cls.here = os.path.dirname(__file__)
+    cls.data =  cls.here + '/data'
 
-    assert(test_str == gen_str)
+  def test_1(self):
+      '''Test 1: Check that json_to_degree works when imported'''
+      jtodeg.json_to_dat(self.data
+          + "/json_test_in.json", output="test1.txt"
+          , silent=True)
+      with open("test1.txt") as file:
+          gen_str = file.read()
+      with open(self.data + "/json_test_out.txt") as file:
+          test_str = file.read()
+
+      assert(test_str == gen_str)
+      os.remove("test1.txt")
+      pass      
 
 
-def test_2():
-    '''Test 2: Check command line execution'''
-    import subprocess
-    subprocess.call(["./json_to_degree.py", "test/json_test_in.json", "-o=foo.txt", "-s"])
-    with open("foo.txt") as file:
-        gen_str = file.read()
-    os.remove("foo.txt")
-    with open("test/json_test_out.txt") as file:
-        test_str = file.read()
+  def test_2(self):
+      '''Test 2: Check command line execution'''
+      cmd = os.path.abspath(self.here + '/../../bin/js2degree.py')
+      print(cmd)
+      subprocess.call([cmd, self.data + "/json_test_in.json", "-o=test2.txt", "-s"])
+      with open("test2.txt") as file:
+          gen_str = file.read()
+      with open(self.data + "/json_test_out.txt") as file:
+          test_str = file.read()
 
-    assert(test_str == gen_str)
-    pass
+      assert(test_str == gen_str)
+      os.remove("test2.txt")
+      pass
