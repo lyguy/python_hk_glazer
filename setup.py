@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(
     name='json_to_degree',
@@ -7,7 +7,7 @@ setup(
     url='https://github.com/fmuzf/meltmod_jsontodegree',
     author='Lyman Gillispie',
     author_email='lyman.gillispie@gmail.com',
-    packages=['json_to_degree', 'json_to_degree.test'],
+    packages=find_packages(),
     license='MIT',
     long_description=open('README.md').read(),
 )
