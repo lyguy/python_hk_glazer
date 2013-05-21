@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='json_to_degree',
-    version='0.0.2-rc1',
+    version='0.0.2',
     description='Covert compatible JSON configs to DeBAM/DeTIM config.dat files',
     url='https://github.com/fmuzf/meltmod_jsontodegree',
     author='Lyman Gillispie',
