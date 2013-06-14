@@ -2,6 +2,7 @@ from nose.tools import with_setup
 import os
 import json_to_degree as js2deg
 import subprocess
+import json
 
 
 class TestClass:
@@ -13,16 +14,15 @@ class TestClass:
 
   def test_1(self):
       '''Test 1: Check that json_to_degree works when imported'''
-      js2deg.json_to_dat(self.data
-          + "/json_test_in.json", output="test1.txt"
-          , silent=True)
-      with open("test1.txt") as file:
-          gen_str = file.read()
-      with open(self.data + "/json_test_out.txt") as file:
-          test_str = file.read()
+      with open(self.data + "/json_test_in.json") as config_file:
+        config_dict = json.load(config_file)
+
+      gen_str = js2deg.dict_to_dat(config_dict)
+
+      with open(self.data + "/json_test_out.txt") as verif_file:
+          test_str = verif_file.read()
 
       assert(test_str == gen_str)
-      os.remove("test1.txt")
       pass      
 
 
