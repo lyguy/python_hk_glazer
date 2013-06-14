@@ -1,6 +1,6 @@
 from nose.tools import with_setup
 import os
-import json_to_degree as jtodeg
+import json_to_degree as js2deg
 import subprocess
 
 
@@ -13,7 +13,7 @@ class TestClass:
 
   def test_1(self):
       '''Test 1: Check that json_to_degree works when imported'''
-      jtodeg.json_to_dat(self.data
+      js2deg.json_to_dat(self.data
           + "/json_test_in.json", output="test1.txt"
           , silent=True)
       with open("test1.txt") as file:
