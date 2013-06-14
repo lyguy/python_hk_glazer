@@ -94,7 +94,7 @@ def main():
 
   args = parser.parse_args()
 
-  js2deg.json_to_dat(args.input, args.output, args.silent)
+  json_to_dat(args.input, args.output, args.silent)
 
 if __name__=="__main__":
   main()
