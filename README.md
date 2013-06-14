@@ -1,4 +1,4 @@
-meltmod_jsontodegree [![Build Status](https://secure.travis-ci.org/fmuzf/meltmod_jsontodegree.png)](http://travis-ci.org/fmuzf/meltmod_jsontodegree)
+meltmod_jsontodegree [![Build Status](https://travis-ci.org/fmuzf/meltmod_jsontodegree.png?branch=master)](https://travis-ci.org/fmuzf/meltmod_jsontodegree)
 ====================
 
 This is a part of the Hock Melt Model: a tool to convert json config files to valid input.dat
