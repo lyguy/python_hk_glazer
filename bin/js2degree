@@ -33,7 +33,7 @@ def json_to_dat(in_file, output=None, silent=False):
 
 # Outputs config file (input.dat) to std out or to a file
     if output == None:
-        print dict_to_dat(config)
+        print js2deg.dict_to_dat(config)
     else:
         if not silent:
             # check to see if the file exists
