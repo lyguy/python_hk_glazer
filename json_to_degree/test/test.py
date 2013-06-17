@@ -27,10 +27,10 @@ class TestClass:
 
 
   def test_2(self):
-      '''Test 2: Check command line execution'''
+      '''Test 2: Check command line execution when saving to file'''
       cmd = os.path.abspath(self.here + '/../../bin/js2degree')
       print(cmd)
-      subprocess.call([cmd, self.data + "/json_test_in.json", "-o=test2.txt", "-s"])
+      subprocess.check_call([cmd, self.data + "/json_test_in.json", "-o=test2.txt", "-s"])
       with open("test2.txt") as file:
           gen_str = file.read()
       with open(self.data + "/json_test_out.txt") as file:
@@ -39,3 +39,19 @@ class TestClass:
       assert(test_str == gen_str)
       os.remove("test2.txt")
       pass
+
+  def test_3(self):
+    '''Test 3: Command line execution when outfile already exists'''
+    cmd = os.path.abspath(self.here + '/../../bin/js2degree')
+    subprocess.check_call([cmd, self.data + "/json_test_in.json", "-o=test3.txt", "-s"])
+    try:
+      subprocess.check_call([cmd, self.data + "/json_test_in.json", "-o=test3.txt"])
+    except Exception as e:
+      print(type(e))
+      assert(type(e) == subprocess.CalledProcessError)
+      pass
+    else:
+      assert(False)
+    finally:
+      os.remove("test3.txt")
+    
