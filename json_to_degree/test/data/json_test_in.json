@@ -182,7 +182,7 @@
     "qfirnstart": 16.0,    
     "qsnowstart": 17.0,    
     "qicestart": 18.0,     
-    "qicestart": 19.0,     
+    "qrockstart": 19.0,     
     "qground": 20.0,       
     "jdstartr2diff": 21.0,   
 
