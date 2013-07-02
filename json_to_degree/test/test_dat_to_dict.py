@@ -3,6 +3,17 @@ import os
 import json_to_degree as js2deg
 import subprocess
 import json
+import collections
+
+def convert(data):
+    if isinstance(data, unicode):
+        return str(data)
+    elif isinstance(data, collections.Mapping):
+        return dict(map(convert, data.iteritems()))
+    elif isinstance(data, collections.Iterable):
+        return type(data)(map(convert, data))
+    else:
+        return data
 
 
 class TestClass:
@@ -19,7 +30,7 @@ class TestClass:
       test_dict = js2deg.input_to_dict(f)
 
     with open(self.data + "/json_test_in.json") as f:
-      verif_dict = json.load(f)
+      verif_dict = convert(json.load(f))
 
     assert(test_dict == verif_dict)
     pass      
@@ -33,7 +44,7 @@ class TestClass:
       test_dict = js2deg.input_to_dicts(s)
 
     with open(self.data + "/json_test_in.json") as f:
-      verif_dict = json.load(f)
+      verif_dict = convert(json.load(f))
 
     assert(test_dict == verif_dict)
     pass      

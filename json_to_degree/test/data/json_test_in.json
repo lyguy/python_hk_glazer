@@ -9,7 +9,7 @@
     "disyes": 1,   
     "calcgridyes": 0,
 
-    "maxmeltstakes": 0,      
+    "maxmeltstakes": 2,      
     "plusminus": 1,          
     "do_out": 0,             
     
@@ -56,7 +56,7 @@
     "cumulmeltyes": 0,      
     "cm_or_m": 1000,        
     "do_out_area": 0,       
-    "outgridnumber": 1,     
+    "outgridnumber": 2,     
 
     "outgrids":[
     { "name": "firstpointoutput.txt", "location": [1, 1], "outglobnet":0},

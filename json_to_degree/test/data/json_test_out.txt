@@ -8,7 +8,7 @@ output/
 1
 0
 
-0
+2
 1
 0
 
@@ -34,7 +34,7 @@ dummydates.dat
 0
 1000
 0
-1
+2
 
 
 firstpointoutput.txt 1 1 0
