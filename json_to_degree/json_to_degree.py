@@ -2,13 +2,6 @@
 # This code is distributed under the MIT License
 # Author: Lyman Gillispie
 
-
-class Error(Exception):
-    pass
-
-import sys as _sys
-
-
 def dict_to_dat(config):
     '''Super ugly conversion method,
     Args: config - a dictionary containing all of the appropriate elements
