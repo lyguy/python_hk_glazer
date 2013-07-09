@@ -47,7 +47,7 @@ class TestClass:
     try:
       subprocess.check_call([cmd,"js2degree", self.data + "/json_test_in.json", "-o=test3.txt"])
     except Exception as e:
-      print(type(e))
+      #print(type(e))
       assert(type(e) == subprocess.CalledProcessError)
       pass
     else:

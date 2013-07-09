@@ -2,6 +2,8 @@
 
 import argparse
 import sys as _sys
+import json
+
 try:
   import json_to_degree as js2deg
 except ImportError:
@@ -21,8 +23,6 @@ def json_to_dat(args):
             output : filename for output, None results in being put to stdout
             silent : If true, does not warn on file overwrite
     """
-    import json
-    
 
     # Open json config file and load the contents to a dictionary
     with open(args.entry) as conf_file:
@@ -41,7 +41,7 @@ def json_to_dat(args):
             try:
                 out_file = open(args.output)
                 out_file.close()
-                raise FileExistsError('Configuration file %s already exists.' % (output))
+                raise FileExistsError('Configuration file %s already exists.' % (args.output))
             except IOError:
                 pass
 
@@ -49,6 +49,30 @@ def json_to_dat(args):
             out_file.write(js2deg.dict_to_dat(config))
 
     return
+
+
+def degree2js(args):
+  """Converts input.txt files to json
+  """
+
+  with open(args.entry) as f:
+    c = js2deg.input_to_dict(f)
+
+  if args.output == None:
+    print json.dumps(c)
+  else:
+    if not args.silent:
+      try:
+        of = open(args.output)
+        of.close()
+        raise FileExistsError('Configuration file %s already exists.' % (args.output))
+      except IOError:
+        pass
+
+    with open(args.output, 'w') as of:
+      json.dump(c, of, sort_keys=True, indent=2, separators=(',', ': '))
+
+  return
 
 
 def main():
@@ -62,9 +86,9 @@ def main():
 
   subparsers = parser.add_subparsers()
 
+  #Add subcommand to convert json to input.txt
   j2d_parser = subparsers.add_parser('js2degree', description='Convert from'
       + 'json to input.txt.')
-
 
   j2d_parser.add_argument('entry', type=str,
           help='json equivalent of input.dat')
@@ -75,6 +99,21 @@ def main():
           default=False,
           help='silently overwrite <output>, if it exists')
   j2d_parser.set_defaults(func= json_to_dat)
+
+  #Add subcommand to convert input.txt to json
+
+  d2j_parser = subparsers.add_parser('degree2js', description="Convert from"
+      + "input.txt to json-formated.")
+  d2j_parser.add_argument('entry', type=str,
+      help='input.txt')
+  d2j_parser.add_argument('-o', '--output', type=str,
+          help='output filename, if unspecified output is sent to stdout')
+
+  d2j_parser.add_argument('-s', '--silent', action="store_true",
+          default=False,
+          help='silently overwrite <output>, if it exists')
+  d2j_parser.set_defaults(func= degree2js)
+
 
   args = parser.parse_args()
   args.func(args)

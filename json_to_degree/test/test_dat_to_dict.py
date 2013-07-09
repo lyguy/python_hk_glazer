@@ -50,3 +50,18 @@ class TestClass:
     pass      
 
 
+  def test_dat_to_dict_cli(self):
+    cmd = os.path.abspath(self.here + '/../../bin/hk_glazer')
+    subprocess.check_call([cmd, "degree2js", self.data + "/json_test_out.txt", "-o=test2.json", "-s"])
+    with open("test2.json") as f:
+        gen_dict = convert(json.load(f))
+
+    with open(self.data + "/json_test_in.json") as f:
+        test_dict = convert(json.load(f))
+
+    assert(test_dict == gen_dict)
+    os.remove("test2.json")
+    pass
+
+
+
