@@ -1,4 +1,4 @@
-**hk_glazer** [![Build Status](https://travis-ci.org/fmuzf/meltmod_jsontodegree.png?branch=master)](https://travis-ci.org/fmuzf/meltmod_jsontodegree)
+**hk_glazer** [![Build Status](https://travis-ci.org/fmuzf/meltmod_jsontodegree.png?branch=master)](https://travis-ci.org/fmuzf/python_hk_glazer)
 ====================
 
 This is a part of the Hock Melt Model: a tool to convert between json config
