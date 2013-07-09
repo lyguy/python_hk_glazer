@@ -5,9 +5,9 @@ import sys as _sys
 import json
 
 try:
-  import json_to_degree as js2deg
+  import hk_glazer as js2deg
 except ImportError:
-  from .. import json_to_degree as js2deg
+  from .. import hk_glazer as js2deg
 
 
 class FileExistsError(Exception):

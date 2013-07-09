@@ -1,6 +1,6 @@
 from nose.tools import with_setup
 import os
-import json_to_degree as js2deg
+import hk_glazer as js2deg
 import subprocess
 import json
 

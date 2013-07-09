@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='json_to_degree',
-    version='0.0.5',
+    name='hk_glazer',
+    version='0.0.6-0.0.2',
     description='Convert compatible JSON configs to DeBAM/DeTIM config.dat files',
     url='https://github.com/fmuzf/meltmod_jsontodegree',
     author='Lyman Gillispie',
