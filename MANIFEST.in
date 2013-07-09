@@ -1,2 +1,2 @@
 include README.md
-include json_to_degree/test/data/*
+include hk_glazer/test/data/*
