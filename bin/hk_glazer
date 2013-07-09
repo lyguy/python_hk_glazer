@@ -25,7 +25,7 @@ def json_to_dat(args):
     
 
     # Open json config file and load the contents to a dictionary
-    with open(args.in_file) as conf_file:
+    with open(args.entry) as conf_file:
         try:
             config = json.load(conf_file)
         except ValueError as e:
@@ -66,7 +66,7 @@ def main():
       + 'json to input.txt.')
 
 
-  j2d_parser.add_argument('input', type=str,
+  j2d_parser.add_argument('entry', type=str,
           help='json equivalent of input.dat')
   j2d_parser.add_argument('-o', '--output', type=str,
           help='output filename, if unspecified output is sent to stdout')
