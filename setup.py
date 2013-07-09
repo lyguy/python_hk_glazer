@@ -4,7 +4,7 @@ setup(
     name='hk_glazer',
     version='0.0.6-0.0.2',
     description='Convert compatible JSON configs to DeBAM/DeTIM config.dat files',
-    url='https://github.com/fmuzf/meltmod_jsontodegree',
+    url='https://github.com/fmuzf/python_hk_glazer',
     author='Lyman Gillispie',
     author_email='lyman.gillispie@gmail.com',
     packages=find_packages(),

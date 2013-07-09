@@ -1,7 +1,8 @@
-**jsontodegree** [![Build Status](https://travis-ci.org/fmuzf/meltmod_jsontodegree.png?branch=master)](https://travis-ci.org/fmuzf/meltmod_jsontodegree)
+**hk_glazer** [![Build Status](https://travis-ci.org/fmuzf/meltmod_jsontodegree.png?branch=master)](https://travis-ci.org/fmuzf/meltmod_jsontodegree)
 ====================
 
-This is a part of the Hock Melt Model: a tool to convert json config files to valid input.dat
+This is a part of the Hock Melt Model: a tool to convert between json config
+files and valid input.dat
 
 
 ## Installation
@@ -16,15 +17,16 @@ This is a part of the Hock Melt Model: a tool to convert json config files to va
 
 3. Done.
 
-# Usage:
+# Command-Line Usage:
 
-    json_to_degree.py [-h] [-o OUTPUT] [-s] input
+      $ hk_glazer <js2degree/degree2js> [-h] [-o OUPUT] [-s] entry
 
 Convert json formatted config files to valid input.dat config files for the
 Hock melt model.
 
 positional arguments:
-  input:                json equivalent of input.dat
+
+  entry:                configuration be it json or txt
 
 optional arguments:
 
