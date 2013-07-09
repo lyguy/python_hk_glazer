@@ -59,7 +59,7 @@ def degree2js(args):
     c = js2deg.input_to_dict(f)
 
   if args.output == None:
-    print json.dumps(c)
+    print json.dumps(c, sort_keys=True, indent=2, separators=(',', ': '))
   else:
     if not args.silent:
       try:
