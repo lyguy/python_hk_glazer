@@ -8,7 +8,7 @@ setup(
     author='Lyman Gillispie',
     author_email='lyman.gillispie@gmail.com',
     packages=find_packages(),
-    scripts=['bin/js2degree'],
+    scripts=['bin/hk_glazer'],
     license='MIT',
     long_description=open('README.md').read(),
     install_requires = ['argparse'],
