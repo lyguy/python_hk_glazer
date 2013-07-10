@@ -276,7 +276,7 @@ def input_to_dicts(s):
 
   c["coordinatesyes"] = int(lineposOffset(158, 0))
   if c["maxmeltstakes"] > 0:
-    coordfmt = { 1: int, 2: int, 3: float}
+    coordfmt = { 1: float, 2: float, 3: int}
     fmt = coordfmt[c["coordinatesyes"]]
     stake_coords = [
         map(fmt, [lineposOffset(ii,0), lineposOffset(ii,1)])
