@@ -9,7 +9,7 @@ files and valid input.dat
 
 1. Download:
 
-        git clone https://github.com/fmuzf/meltmod_jsontodegree.git
+        $ git clone https://github.com/fmuzf/python_hk_glazer.git
 
 2. Install:
 
