@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='hk_glazer',
-    version='0.0.7',
+    version='0.0.8-0.0.1',
     description='Convert compatible JSON configs to DeBAM/DeTIM config.dat files',
     url='https://github.com/fmuzf/python_hk_glazer',
     author='Lyman Gillispie',
